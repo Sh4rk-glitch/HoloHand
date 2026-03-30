@@ -1,0 +1,7 @@
+{
+  "name": "HoloHand - Gesture Interface Art System",
+  "description": "A real-time AI hand-tracking interface and mini-game inspired by futuristic hologram UIs. Use pinches and grabs to manipulate virtual objects directly in the air.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
