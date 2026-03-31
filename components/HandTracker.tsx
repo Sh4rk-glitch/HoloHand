@@ -91,7 +91,9 @@ const HandTracker: React.FC<HandTrackerProps> = ({ onHandUpdate, onLatencyUpdate
 
           for (let i = 0; i < results.multiHandLandmarks.length; i++) {
             const landmarks = results.multiHandLandmarks[i];
-            const handedness = results.multiHandedness[i].label as 'Left' | 'Right';
+            // Swap handedness because the video is mirrored (selfie mode)
+            const rawHandedness = results.multiHandedness[i].label;
+            const handedness = (rawHandedness === 'Left' ? 'Right' : 'Left') as 'Left' | 'Right';
             
             const { gesture, pinchStrength, pinchPoint, raisedFingers } = detectGesture(landmarks);
             
